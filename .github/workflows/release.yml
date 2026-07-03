@@ -12,14 +12,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm@9
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - run: pnpm install --no-frozen-lockfile
+      - run: npm install
 
       - uses: dtolnay/rust-toolchain@stable
         with:
@@ -43,14 +40,11 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - name: Install pnpm
-        run: npm install -g pnpm@9
-
       - uses: actions/setup-node@v4
         with:
           node-version: 22
 
-      - run: pnpm install --no-frozen-lockfile
+      - run: npm install
 
       - uses: dtolnay/rust-toolchain@stable
         with:
