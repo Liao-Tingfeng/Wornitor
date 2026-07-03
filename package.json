@@ -27,5 +27,6 @@
     "@vitejs/plugin-react": "^4",
     "typescript": "^5",
     "vite": "^6"
-  }
+  },
+  "packageManager": "pnpm@10.9.0"
 }
