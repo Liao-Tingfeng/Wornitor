@@ -1,0 +1,40 @@
+# Dependencies
+node_modules/
+target/
+
+# Build output
+dist/
+src-tauri/target/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Environment & secrets
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+credentials.json
+
+# Database (local)
+*.db
+*.db-journal
+*.db-wal
+
+# Screenshots (local capture data)
+screenshots/
+
+# Logs
+*.log
+
+# Misc
+.cache/

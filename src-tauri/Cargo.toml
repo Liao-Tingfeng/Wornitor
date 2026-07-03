@@ -1,0 +1,45 @@
+[package]
+name = "wornitor"
+version = "0.1.0"
+description = "Wornitor - AI-powered desktop activity tracker"
+authors = ["you"]
+edition = "2021"
+
+[lib]
+name = "wornitor_lib"
+crate-type = ["lib", "cdylib", "staticlib"]
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+tauri = { version = "2", features = ["protocol-asset", "tray-icon"] }
+tauri-plugin-shell = "2"
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+rusqlite = { version = "0.39", features = ["bundled"] }
+r2d2 = "0.8"
+r2d2_sqlite = "0.34"
+thiserror = "2"
+uuid = { version = "1", features = ["v4"] }
+chrono = { version = "0.4", features = ["serde"] }
+
+# LLM & HTTP
+reqwest = { version = "0.12", features = ["json"] }
+tokio = { version = "1", features = ["full"] }
+async-trait = "0.1"
+
+# Image processing & screen capture
+# Cross-platform capture via xcap (Windows/DXGI, macOS/CoreGraphics, Linux/X11)
+image = "0.25"
+img_hash = "3"
+base64 = "0.22"
+xcap = "0.3"
+active-win-pos-rs = "0.8"
+
+[dev-dependencies]
+tempfile = "3"
+
+[features]
+default = ["custom-protocol"]
+custom-protocol = ["tauri/custom-protocol"]
